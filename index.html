@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">RiftTips</a>
+        <nav class="navbar">
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Sobre</a>
+            <a href="#">Dicas</a>
+            <a href="#">Builds</a>
+            <a href="#">Campeões</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>RiftTips: Domine o League of Legends</h1>
+            <h3>As Melhores Dicas para atingir seus objetivos</h3>
+            <p>Explore dicas, truques e estratégias para se tornar um mestre do League of Legends. 
+                De guias de campeões a táticas avançadas, o RiftTips é seu companheiro indispensável para a vitória.</p>
+            <div class="btn-box">
+                <a href="#">Discord</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="secao-projetos">
+        <ul>
+            <li class="card">
+                <div class="image">
+                    <img src="img/antitiltmarca.png" alt="">
+                </div>
+                <div class="texto">
+                    <h3>Título do Projeto</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos vitae ipsam laborum nulla ex minus.</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="image">
+                    <img src="img/wavemarca.jpg" alt="">
+                </div>
+                <div class="texto">
+                    <h3>Título do Projeto</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos vitae ipsam laborum nulla ex minus.</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="image">
+                    <img src="img/carregarmarca.png" alt="">
+                </div>
+                <div class="texto">
+                    <h3>Título do Projeto</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos vitae ipsam laborum nulla ex minus.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="secao-orcamento">
+        <h2>Registro de jogador</h2>
+
+        <form id="registroForm" action="">
+            <div class="input-group">
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+            </div>
+
+            <div class="input-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+
+            <div class="input-group">
+                <label for="nickLol">Nick no LoL:</label>
+                <input type="text" id="nickLol" name="nickLol" required placeholder="Nickname#1234">
+            </div>            
+
+            <div class="input-group">
+                <label for="eloAtual">Elo Atual:</label>
+                <select id="eloAtual" name="eloAtual">
+                    <option value="">Selecione</option>
+                    <option value="ferro">Ferro</option>
+                    <option value="bronze">Bronze</option>
+                    <option value="prata">Prata</option>
+                    <option value="ouro">Ouro</option>
+                    <option value="platina">Platina</option>
+                    <option value="diamante">Diamante</option>
+                    <option value="mestre">Mestre</option>
+                    <option value="grao-mestre">Grão-Mestre</option>
+                    <option value="desafiante">Desafiante</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="objetivo">Objetivo:</label>
+                <select id="objetivo" name="objetivo" onchange="atualizarObjetivo()">
+                    <option value="">Selecione</option>
+                    <option value="elojob">Elojob</option>
+                    <option value="coach">Coach</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="subObjetivoElojob" style="display:none;">
+                <label for="elojob">Elo desejado:</label>
+                <select id="elojob" name="elojob" onchange="atualizarValor()">
+                    <option value="">Selecione</option>
+                    <option value="esmeraldaI">Esmeralda I</option>
+                    <option value="esmeraldaII">Esmeralda II</option>
+                    <option value="esmeraldaIII">Esmeralda III</option>
+                    <option value="esmeraldaIV">Esmeralda IV</option>
+                    <option value="diamanteI">Diamante I</option>
+                    <option value="diamanteII">Diamante II</option>
+                    <option value="diamanteIII">Diamante III</option>
+                    <option value="diamanteIV">Diamante IV</option>
+                    <option value="mestre">Mestre</option>
+                    <option value="grao-mestre">Grão-Mestre</option>
+                    <option value="desafiante">Desafiante</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="subObjetivoCoach" style="display:none;">
+                <label for="coach">Tipo de Coaching:</label>
+                <select id="coach" name="coach" onchange="atualizarValor()">
+                    <option value="">Selecione</option>
+                    <option value="mindset">Mindset</option>
+                    <option value="macro">Macro game</option>
+                    <option value="micro">Micro game</option>
+                    <option value="wave">Controle de wave</option>
+                    <option value="coachOutro">Outro</option>
+                </select>
+                <input type="text" id="coachOutroDescricao" name="coachOutroDescricao" style="display:none;" placeholder="Descreva a sua necessidade:">
+            </div>
+
+            <div class="input-group" id="outrosObjetivo" style="display:none;">
+                <label for="objetivoOutros">Descreva seu objetivo:</label>
+                <input type="text" id="objetivoOutros" name="objetivoOutros">
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <span id="orcamento">R$0,00</span>
+
+    </section>
+</body>
+</html>
